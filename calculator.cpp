@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int number1, number2;
+float number1, number2;
 string operation;
 string arrSum[] = {"1", "1)", "sum", "summation"};
 string arrSub[] = {"2", "2)", "substraction", "substract"};
@@ -20,19 +20,19 @@ bool inArray (string word, string arr[], int arrayLength){
     }
 }
 
-int sum(int num1, int num2) {
+float sum(float num1, float num2) {
     return num1 + num2;
 }
 
-int deduct(int num1, int num2){
+float deduct(float num1, float num2){
     return num1 - num2;
 }
 
-int multiply (int num1, int num2){
+float multiply (float num1, float num2){
     return num1 * num2;
 }
 
-int divide(int num1, int num2){
+float divide(float num1, float num2){
     return num1 / num2;
 }
 
@@ -47,7 +47,7 @@ int main(){
     cin >> number1;
     cout << "\nEnter your second number: ";
     cin >> number2;
-    cout << "Enter your required operation: " << endl;
+    cout << "\nEnter your required operation: " << endl;
     cout << "1) Sum" << endl;
     cout << "2) Substraction" << endl;
     cout << "3) Division" << endl;
