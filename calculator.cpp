@@ -16,8 +16,8 @@ bool inArray (string word, string arr[], int arrayLength){
         if (arr[i] == word){
             return true;
         }
+        else return false;
     }
-    else return false;
 }
 
 int sum(int num1, int num2) {
@@ -45,7 +45,7 @@ int main(){
     
     cout << "Enter your first number: ";
     cin >> number1;
-    cout << "\n Enter your second number: ";
+    cout << "\nEnter your second number: ";
     cin >> number2;
     cout << "Enter your required operation: " << endl;
     cout << "1) Sum" << endl;
@@ -55,19 +55,19 @@ int main(){
     cin >> operation;
     transform(operation.begin(), operation.end(), operation.begin(), ::tolower);
     
-    if (inArray(operation, arrSum, sizeof(arrSum) / sizeof(arrSum[0]) - 1){
+    if (inArray(operation, arrSum, sizeof(arrSum) / sizeof(arrSum[0]) - 1)){
         cout << "The sum of " << number1 << " and " << number2 << " is: " << sum(number1, number2) << endl;
     }
 
-    else if (inArray(operation, arrSub, sizeof(arrSub) / sizeof(arrSub[0]) - 1){
+    else if (inArray(operation, arrSub, sizeof(arrSub) / sizeof(arrSub[0]) - 1)){
         cout << "The substraction of " << number1 << " and " << number2 << " is: " << deduct(number1, number2) << endl;
     }
 
-    else if (inArray(operation, arrMult, sizeof(arrMult) / sizeof(arrMult[0]) - 1){
+    else if (inArray(operation, arrMult, sizeof(arrMult) / sizeof(arrMult[0]) - 1)){
         cout << "The multiplication of " << number1 << " and " << number2 << " is: " << multiply(number1, number2) << endl;
     }
 
-    else if (inArray(operation, arrDiv, sizeof(arrDiv) / sizeof(arrDiv[0]) - 1){
+    else if (inArray(operation, arrDiv, sizeof(arrDiv) / sizeof(arrDiv[0]) - 1)){
         cout << "The division of " << number1 << " and " << number2 << " is: " << divide(number1, number2) << endl;
     }
 
