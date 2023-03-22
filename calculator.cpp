@@ -6,10 +6,10 @@ using namespace std;
 
 int number1, number2;
 string operation;
-arrSum[] = {"1", "1)", "sum", "summation"};
-arrSub[] = {"2", "2)", "substraction", "substract"};
-arrMult[] = {"3", "3)", "multiply", "multiplication"};
-arrDiv[] = {"4", "4)", "divide", "division"};
+string arrSum[] = {"1", "1)", "sum", "summation"};
+string arrSub[] = {"2", "2)", "substraction", "substract"};
+string arrMult[] = {"3", "3)", "multiply", "multiplication"};
+string arrDiv[] = {"4", "4)", "divide", "division"};
 
 bool inArray (string word, string arr[], int arrayLength){
     for (int i = 0; i <= arrayLength; i++){
