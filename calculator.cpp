@@ -1,76 +1,67 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 using namespace std;
 
-float number1, number2;
-string operation;
-string arrSum[] = {"1", "1)", "sum", "summation"};
-string arrSub[] = {"2", "2)", "substraction", "substract"};
-string arrMult[] = {"3", "3)", "multiply", "multiplication"};
-string arrDiv[] = {"4", "4)", "divide", "division"};
-
-bool inArray (string word, string arr[], int arrayLength){
-    for (int i = 0; i <= arrayLength; i++){
-        if (arr[i] == word){
-            return true;
-        }
-        else return false;
-    }
+bool inArray(string checkWord, string arr[], int sizeOfArray) {
+  bool exists = false;
+  for (int i = 0; i <= sizeOfArray; i++) {
+    if (arr[i] == checkWord)
+      exists = true;
+  }
+  if (exists)
+    return true;
+  else
+    return false;
 }
 
-float sum(float num1, float num2) {
-    return num1 + num2;
-}
+float sum(float num1, float num2) { return num1 + num2; }
 
-float deduct(float num1, float num2){
-    return num1 - num2;
-}
+float substract(float num1, float num2) { return num1 - num2; }
 
-float multiply (float num1, float num2){
-    return num1 * num2;
-}
+float multiply(float num1, float num2) { return num1 * num2; }
 
-float divide(float num1, float num2){
-    return num1 / num2;
-}
+float divide(float num1, float num2) { return num1 / num2; }
 
-int main(){
-    cout << "-----------------------------" << endl;
-    cout << "|                            |" << endl;
-    cout << "| Welcome to the Calculator! |" << endl;
-    cout << "|                            |" << endl;
-    cout << "-----------------------------" << endl;
-    
-    cout << "Enter your first number: ";
-    cin >> number1;
-    cout << "\nEnter your second number: ";
-    cin >> number2;
-    cout << "\nEnter your required operation: " << endl;
-    cout << "1) Sum" << endl;
-    cout << "2) Substraction" << endl;
-    cout << "3) Division" << endl;
-    cout << "4) Multiplication" << endl;
-    cin >> operation;
-    transform(operation.begin(), operation.end(), operation.begin(), ::tolower);
-    
-    if (inArray(operation, arrSum, sizeof(arrSum) / sizeof(arrSum[0]) - 1)){
-        cout << "The sum of " << number1 << " and " << number2 << " is: " << sum(number1, number2) << endl;
-    }
+int main() {
+  string arr1[] = {"1", "sum", "+", "1)"};
+  string arr2[] = {"2", "substract", "-", "2)"};
+  string arr3[] = {"3", "multiply", "*", "3)"};
+  string arr4[] = {"4", "divide", "/", "4)"};
+  string detect;
+  float n1, n2;
+  cout << "\n -------------------------------- \n";
+  cout << " \n   Welcome to the calculator!" << endl;
+  cout << "\n -------------------------------- \n";
+  cout << "\nEnter your first number: ";
+  cin >> n1;
+  cout << "\nEnter your second number: ";
+  cin >> n2;
+  cout << "Choose your required operation: " << endl;
+  cout << "1) + (sum)\n2) - (substract)\n3) * (multiply)\n4) / (divide)"
+       << endl;
+  cin >> detect;
+  transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
+  if (inArray(detect, arr1, sizeof(arr1) / sizeof(arr1[0]) - 1)) {
+    cout << "The sum of " << n1 << " and " << n2 << " is : " << sum(n1, n2);
+  }
 
-    else if (inArray(operation, arrSub, sizeof(arrSub) / sizeof(arrSub[0]) - 1)){
-        cout << "The substraction of " << number1 << " and " << number2 << " is: " << deduct(number1, number2) << endl;
-    }
+  else if (inArray(detect, arr2, sizeof(arr2) / sizeof(arr2[0]) - 1)) {
+    cout << "The substraction of " << n1 << " and " << n2
+         << " is : " << substract(n1, n2);
+  }
 
-    else if (inArray(operation, arrMult, sizeof(arrMult) / sizeof(arrMult[0]) - 1)){
-        cout << "The multiplication of " << number1 << " and " << number2 << " is: " << multiply(number1, number2) << endl;
-    }
+  else if (inArray(detect, arr3, sizeof(arr3) / sizeof(arr3[0]) - 1)) {
+    cout << "The multiplication of " << n1 << " and " << n2
+         << " is : " << multiply(n1, n2);
+  }
 
-    else if (inArray(operation, arrDiv, sizeof(arrDiv) / sizeof(arrDiv[0]) - 1)){
-        cout << "The division of " << number1 << " and " << number2 << " is: " << divide(number1, number2) << endl;
-    }
+  else if (inArray(detect, arr4, sizeof(arr4) / sizeof(arr4[0]) - 1)) {
+    cout << "The division of " << n1 << " and " << n2
+         << " is : " << divide(n1, n2);
+  }
 
-    else cout << "Your input could not be validated!" << endl;
-
+  else
+    cout << "Your input was not evaluated!" << endl;
 }
