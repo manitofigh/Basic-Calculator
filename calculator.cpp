@@ -53,7 +53,7 @@ int main(){
     cout << "3) Division" << endl;
     cout << "4) Multiplication" << endl;
     cin >> operation;
-    operation = transform(operation.begin(), operation.end(), operation.begin(), ::tolower);
+    transform(operation.begin(), operation.end(), operation.begin(), ::tolower);
     
     if (inArray(operation, arrSum, sizeof(arrSum) / sizeof(arrSum[0]) - 1){
         cout << "The sum of " << number1 << " and " << number2 << " is: " << sum(number1, number2) << endl;
