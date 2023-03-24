@@ -53,23 +53,23 @@ int main() {
   cin >> detect;
   transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
   if (inArray(detect, arr1, sizeof(arr1) / sizeof(arr1[0]) - 1)) {
-    cout << "The sum of " << n1 << " and " << n2 << " is : " << sum(n1, n2);
+    cout << "The sum of " << n1 << " and " << n2 << " is : " << sum(n1, n2) << endl;
   }
 
   else if (inArray(detect, arr2, sizeof(arr2) / sizeof(arr2[0]) - 1)) {
-    cout << "The substraction of " << n1 << " and " << n2 << " is : " << substract(n1, n2);
+    cout << "The substraction of " << n1 << " and " << n2 << " is : " << substract(n1, n2) << endl;
   }
 
   else if (inArray(detect, arr3, sizeof(arr3) / sizeof(arr3[0]) - 1)) {
-    cout << "The multiplication of " << n1 << " and " << n2 << " is : " << multiply(n1, n2);
+    cout << "The multiplication of " << n1 << " and " << n2 << " is : " << multiply(n1, n2) << endl;
   }
 
   else if (inArray(detect, arr4, sizeof(arr4) / sizeof(arr4[0]) - 1)) {
-    cout << "The division of " << n1 << " and " << n2 << " is : " << divide(n1, n2);
+    cout << "The division of " << n1 << " and " << n2 << " is : " << divide(n1, n2) << endl;
   }
   
   else if (inArray(detect, arr5, sizeof(arr5) / sizeof(arr5[0]) - 1)) {
-    cout <<  n1 << " to the power of " << n2 << " is : " << power(n1, n2);
+    cout <<  n1 << " to the power of " << n2 << " is : " << power(n1, n2) << endl;
   }
 
   else
