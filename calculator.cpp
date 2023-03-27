@@ -32,12 +32,20 @@ float power(float num1, int num2) {
   return num1;
 }
 
+// int factorial(int num1){
+//     for (int i = num1 - 1; i >= 1; i--){
+//       num1 *= i;
+//     }
+//     return num1;
+// }
+
 int main() {
   string arr1[] = {"1", "sum", "+", "1)"};
   string arr2[] = {"2", "substract", "-", "2)"};
   string arr3[] = {"3", "multiply", "*", "3)"};
   string arr4[] = {"4", "divide", "/", "4)"};
   string arr5[] = {"5", "power", "^", "5)"};
+  //string arr6[] = {"6", "factorial", "!", "6)"};
   string detect;
   float n1, n2;
   cout << "\n -------------------------------- \n";
