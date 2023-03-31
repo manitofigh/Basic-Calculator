@@ -73,20 +73,20 @@ int main() {
   cout << "************************************" << endl;
   cout << "\nHow many numbers would you like to enter? ";
   cin >> userNumAmount;
-  vector<double> userVector(userNumAmount); // creates a vector with enough indexes for the amount of numbers the user wants to enter
-  cout << endl;
-  for (int i = 1 ; i <= userNumAmount ; i++){
-      cout << "Enter number " << i << " : "; // Takes in all the numbers the user wants to enter one after the other
-      cin >> userVector.at(i - 1);
-  }
-  if (userNumAmount == 0) { // since you need at least one number to use the calc, it will ask to enter a num above 0, incase they entered a num < 1
+  if (userNumAmount <= 0) { // since you need at least one number to use the calc, it will ask to enter a num above 0, incase they entered a num < 1
       do {
           cout << "\nOnly enter an integer above 0: ";
           cin >> userNumAmount;
       }
       while (userNumAmount <= 0);
   }
-  else if (userNumAmount == 1) { // if user wanted to work with one number
+  vector<double> userVector(userNumAmount); // creates a vector with enough indexes for the amount of numbers the user wants to enter
+  cout << endl;
+  for (int i = 1 ; i <= userNumAmount ; i++){
+      cout << "Enter number " << i << " : "; // Takes in all the numbers the user wants to enter one after the other
+      cin >> userVector.at(i - 1);
+  }
+  if (userNumAmount == 1) { // if user wanted to work with one number
       menuOne();
       if (inArray(detect, arr6, sizeof(arr6) / sizeof(arr6[0]) - 1)) {
           finalNum = factorial(userVector.at(0));
