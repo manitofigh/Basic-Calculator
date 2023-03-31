@@ -80,11 +80,42 @@ int main() {
       while (userNumAmount <= 0);
   }
   else if (userNumAmount == 1) {
-      cout << "\nThe only supported operation on a single number is factorial!" << endl;
+      cout << "\nThe only supported operation on a single number is factorial." << endl;
       cout << "The factorial of " << userVector.at(0) << " is : " << factorial(userVector.at(0));
   }
   else if (userNumAmount == 2) {
       menuTwo();
+      if (inArray(detect, arr1, sizeof(arr1) / sizeof(arr1[0]) - 1)) {
+          for (int i = 0; i < userNumAmount ; i++) {
+              finalNum += userVector.at(i);
+          }
+          cout << "The sum of your numbers is: " << finalNum << endl;
+      }
+      else if (inArray(detect, arr2, sizeof(arr2) / sizeof(arr2[0]) - 1)) {
+          finalNum = userVector.at(0);
+          for (int i = 1; i < userNumAmount; i++) {
+              finalNum -= userVector.at(i);
+          }
+          cout << "The subtraction of your numbers is: " << finalNum << endl;
+      }
+      else if (inArray(detect, arr3, sizeof(arr3) / sizeof(arr3[0]) - 1)) {
+          finalNum = 1;
+          for (int i = 0; i < userNumAmount ; i++) {
+              finalNum *= userVector.at(i);
+          }
+          cout << "The multiplication of your numbers is: " << finalNum << endl;
+      }
+      else if (inArray(detect, arr4, sizeof(arr4) / sizeof(arr4[0]) - 1)) {
+          finalNum = userVector.at(0);
+          for (int i = 1; i < userNumAmount; i++) {
+              finalNum /= userVector.at(i);
+          }
+          cout << "The division of your numbers is: " << finalNum << endl;
+      }
+      else if (inArray(detect, arr5, sizeof(arr5) / sizeof(arr5[0]) - 1)) {
+          finalNum = power(userVector.at(0), userVector.at(1));
+          cout << userVector.at(0) << " to the power of " << userVector.at(1) << " is: " << finalNum << endl;
+      }
   }
   else {
       menuOther();
