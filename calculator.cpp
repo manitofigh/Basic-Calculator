@@ -18,8 +18,8 @@ bool inArray(string checkWord, string arr[], int sizeOfArray) {
   else return false;
 }
 
-float power(float num1, int num2) {
-  float fixedNum = num1;
+double power(double num1, int num2) {
+  double fixedNum = num1;
   for (int i = 1; i < num2; i++) {
     num1 *= fixedNum;
   }
@@ -55,7 +55,7 @@ void menuOther(){
 }
 
 int main() {
-  float finalNum;
+  double finalNum;
   string arr1[] = {"1", "sum", "+", "1)", "one"};
   string arr2[] = {"2", "subtract", "-", "2)", "two"};
   string arr3[] = {"3", "multiply", "*", "3)", "three"};
@@ -67,7 +67,7 @@ int main() {
   cout << "\n -------------------------------- \n";
   cout << "How many numbers would you like to enter? ";
   cin >> userNumAmount;
-  vector<float> userVector(userNumAmount);
+  vector<double> userVector(userNumAmount);
   for (int i = 1 ; i <= userNumAmount ; i++){
       cout << "Enter number " << i << " : ";
       cin >> userVector.at(i - 1);
@@ -146,6 +146,5 @@ int main() {
           }
           cout << "The division of your numbers is: " << finalNum << endl;
       }
-
   }
 }
