@@ -7,7 +7,6 @@ using namespace std;
 
 int userNumAmount;
 string detect;
-float finalNum;
 
 bool inArray(string checkWord, string arr[], int sizeOfArray) {
   bool exists = false;
@@ -56,8 +55,9 @@ void menuOther(){
 }
 
 int main() {
+  float finalNum;
   string arr1[] = {"1", "sum", "+", "1)", "one"};
-  string arr2[] = {"2", "substract", "-", "2)", "two"};
+  string arr2[] = {"2", "subtract", "-", "2)", "two"};
   string arr3[] = {"3", "multiply", "*", "3)", "three"};
   string arr4[] = {"4", "divide", "/", "4)", "four"};
   string arr5[] = {"5", "power", "^", "5)", "five"};
@@ -95,52 +95,26 @@ int main() {
           cout << "The sum of your numbers is: " << finalNum << endl;
       }
       else if (inArray(detect, arr2, sizeof(arr2) / sizeof(arr2[0]) - 1)) {
-          for (int i = 0; i < userNumAmount; i++) {
+          finalNum = userVector.at(0);
+          for (int i = 1; i < userNumAmount; i++) {
               finalNum -= userVector.at(i);
           }
           cout << "The subtraction of your numbers is: " << finalNum << endl;
       }
       else if (inArray(detect, arr3, sizeof(arr3) / sizeof(arr3[0]) - 1)) {
+          finalNum = 1;
           for (int i = 0; i < userNumAmount ; i++) {
               finalNum *= userVector.at(i);
           }
           cout << "The multiplication of your numbers is: " << finalNum << endl;
       }
       else if (inArray(detect, arr4, sizeof(arr4) / sizeof(arr4[0]) - 1)) {
-          for (int i = 0; i < userNumAmount; i++) {
+          finalNum = userVector.at(0);
+          for (int i = 1; i < userNumAmount; i++) {
               finalNum /= userVector.at(i);
           }
           cout << "The division of your numbers is: " << finalNum << endl;
       }
 
   }
-
-  }
-//  cout << "\nEnter your first number: ";
-//  cin >> n1;
-//  cout << "\nEnter your second number: ";
-//  cin >> n2;
-//  transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
-//  if (inArray(detect, arr1, sizeof(arr1) / sizeof(arr1[0]) - 1)) {
-//    cout << "The sum of " << n1 << " and " << n2 << " is : " << sum(n1, n2) << endl;
-//  }
-//
-//  else if (inArray(detect, arr2, sizeof(arr2) / sizeof(arr2[0]) - 1)) {
-//    cout << "The substraction of " << n1 << " and " << n2 << " is : " << substract(n1, n2) << endl;
-//  }
-//
-//  else if (inArray(detect, arr3, sizeof(arr3) / sizeof(arr3[0]) - 1)) {
-//    cout << "The multiplication of " << n1 << " and " << n2 << " is : " << multiply(n1, n2) << endl;
-//  }
-//
-//  else if (inArray(detect, arr4, sizeof(arr4) / sizeof(arr4[0]) - 1)) {
-//    cout << "The division of " << n1 << " and " << n2 << " is : " << divide(n1, n2) << endl;
-//  }
-//
-//  else if (inArray(detect, arr5, sizeof(arr5) / sizeof(arr5[0]) - 1)) {
-//    cout <<  n1 << " to the power of " << n2 << " is : " << power(n1, n2) << endl;
-//  }
-//
-//  else
-//    cout << "Your input was not evaluated!" << endl;
 }
