@@ -88,7 +88,7 @@ int main() {
   }
   if (userNumAmount == 1) { // if user wanted to work with one number
       menuOne();
-      if (inArray(detect, arr6, sizeof(arr6) / sizeof(arr6[0]) - 1)) {
+      if (inArray(detect, arr6, sizeof(arr6) / sizeof(arr6[0]) - 1)) { // sizeof(arr) / sizeof(arr[0]) returns the number of elements inside the array.
           finalNum = factorial(userVector.at(0));
           cout << "\nThe factorial of " << userVector.at(0) << " is: " << finalNum << endl << endl;
       }
@@ -107,21 +107,21 @@ int main() {
           cout << "\nThe sum of your numbers is: " << finalNum << endl << endl;
       }
       else if (inArray(detect, arr2, sizeof(arr2) / sizeof(arr2[0]) - 1)) {
-          finalNum = userVector.at(0);
+          finalNum = userVector.at(0); // have to set finalNum to the first value in the vector or it will not have anything to deduct from.
           for (int i = 1; i < userNumAmount; i++) {
               finalNum -= userVector.at(i);
           }
           cout << "\nThe subtraction of your numbers is: " << finalNum << endl << endl;
       }
       else if (inArray(detect, arr3, sizeof(arr3) / sizeof(arr3[0]) - 1)) {
-          finalNum = 1;
+          finalNum = 1; // since by default it is set to 0, if it's assigned to 1, it will return 0 no matter what 
           for (int i = 0; i < userNumAmount ; i++) {
               finalNum *= userVector.at(i);
           }
           cout << "\nThe multiplication of your numbers is: " << finalNum << endl << endl;
       }
       else if (inArray(detect, arr4, sizeof(arr4) / sizeof(arr4[0]) - 1)) {
-          finalNum = userVector.at(0);
+          finalNum = userVector.at(0); 
           for (int i = 1; i < userNumAmount; i++) {
               finalNum /= userVector.at(i);
           }
