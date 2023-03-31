@@ -9,7 +9,7 @@ using namespace std;
 int userNumAmount;
 string detect;
 
-bool inArray(string checkWord, string arr[], int sizeOfArray) {
+bool inArray(string checkWord, string arr[], int sizeOfArray) { // Function to understand if a word is inside an array
   bool exists = false;
   for (int i = 0; i <= sizeOfArray; i++) {
     if (arr[i] == checkWord)
@@ -19,7 +19,7 @@ bool inArray(string checkWord, string arr[], int sizeOfArray) {
   else return false;
 }
 
-double power(double num1, int num2) {
+double power(double num1, int num2) { // returns the first number to the power of the second number
   double fixedNum = num1;
   for (int i = 1; i < num2; i++) {
     num1 *= fixedNum;
@@ -27,28 +27,28 @@ double power(double num1, int num2) {
   return num1;
 }
 
-int factorial(int num1){
+int factorial(int num1){ // returns the factorial of any number
      for (int i = num1 - 1; i >= 1; i--){
        num1 *= i;
      }
      return num1;
 }
 
-void menuOne (){
+void menuOne (){ // the showing menu if the user only wants to work with one number
    cout << "Choose your required operation: " << endl;
    cout << "1) ! (factorial)\n2) √ (root)" << endl;
    cin >> detect;
    transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
 }
 
-void menuTwo (){
+void menuTwo (){ // the menu if the user wants to work with 2 numbers
     cout << "Choose your required operation: " << endl;
     cout << "1) + (sum)\n2) - (substract)\n3) * (multiply)\n4) / (divide)\n5) ^ (power)" << endl;
     cin >> detect;
     transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
 }
 
-void menuOther(){
+void menuOther(){ // the menu when need to take 3 or more numbers into calculation
     cout << "Choose your required operation: " << endl;
     cout << "1) + (sum)\n2) - (substract)\n3) * (multiply)\n4) / (divide)"<< endl;
     cin >> detect;
@@ -70,19 +70,19 @@ int main() {
   cout << "\n -------------------------------- \n";
   cout << "How many numbers would you like to enter? ";
   cin >> userNumAmount;
-  vector<double> userVector(userNumAmount);
+  vector<double> userVector(userNumAmount); // creates a vector with enough indexes for the amount of numbers the user wants to enter
   for (int i = 1 ; i <= userNumAmount ; i++){
-      cout << "Enter number " << i << " : ";
+      cout << "Enter number " << i << " : "; // Takes in all the numbers the user wants to enter one after the other
       cin >> userVector.at(i - 1);
   }
-  if (userNumAmount == 0) {
+  if (userNumAmount == 0) { // since you need at least one number to use the calc, it will ask to enter a num above 0, incase they entered a num < 1
       do {
           cout << "Only enter an integer above 0: ";
           cin >> userNumAmount;
       }
       while (userNumAmount <= 0);
   }
-  else if (userNumAmount == 1) {
+  else if (userNumAmount == 1) { // if user wanted to work with one number
       menuOne();
       if (inArray(detect, arr6, sizeof(arr6) / sizeof(arr6[0]) - 1)) {
           finalNum = factorial(userVector.at(0));
@@ -94,7 +94,7 @@ int main() {
       }
       else cout << "Your input was not evaluated!" << endl;
   }
-  else if (userNumAmount == 2) {
+  else if (userNumAmount == 2) { // if user wanted to work with 2 numbers
       menuTwo();
       if (inArray(detect, arr1, sizeof(arr1) / sizeof(arr1[0]) - 1)) {
           for (int i = 0; i < userNumAmount ; i++) {
@@ -129,7 +129,7 @@ int main() {
       }
       else cout << "Your input was not evaluated!" << endl;
   }
-  else {
+  else { // if the numbers to take into calculation were >= 3
       menuOther();
       if (inArray(detect, arr1, sizeof(arr1) / sizeof(arr1[0]) - 1)) {
           for (int i = 0; i < userNumAmount ; i++) {
@@ -158,6 +158,6 @@ int main() {
           }
           cout << "The division of your numbers is: " << finalNum << endl;
       }
-      else cout << "Your input was not evaluated!" << endl;
+      else cout << "Your input was not evaluated!" << endl; // in case the chosen operation was not detected in the list of options
   }
 }
