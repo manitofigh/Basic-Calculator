@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -26,18 +27,18 @@ double power(double num1, int num2) {
   return num1;
 }
 
- int factorial(int num1){
+int factorial(int num1){
      for (int i = num1 - 1; i >= 1; i--){
        num1 *= i;
      }
      return num1;
- }
+}
 
 void menuOne (){
-    cout << "Choose your required operation: " << endl;
-    cout << "1) ! (factorial)" << endl;
-    cin >> detect;
-    transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
+   cout << "Choose your required operation: " << endl;
+   cout << "1) ! (factorial)\n2) √ (root)" << endl;
+   cin >> detect;
+   transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
 }
 
 void menuTwo (){
@@ -61,7 +62,9 @@ int main() {
   string arr3[] = {"3", "multiply", "*", "3)", "three"};
   string arr4[] = {"4", "divide", "/", "4)", "four"};
   string arr5[] = {"5", "power", "^", "5)", "five"};
-//  string arr6[] = {"6", "factorial", "!", "6)", "six"};
+  string arr6[] = {"1", "factorial", "!", "1)", "one"};
+  string arr7[] = {"2", "root", "√", "2)", "two"};
+
   cout << "\n -------------------------------- \n";
   cout << " \n|   Welcome to the calculator!  |" << endl;
   cout << "\n -------------------------------- \n";
@@ -80,8 +83,16 @@ int main() {
       while (userNumAmount <= 0);
   }
   else if (userNumAmount == 1) {
-      cout << "\nThe only supported operation on a single number is factorial." << endl;
-      cout << "The factorial of " << userVector.at(0) << " is : " << factorial(userVector.at(0));
+      menuOne();
+      if (inArray(detect, arr6, sizeof(arr6) / sizeof(arr6[0]) - 1)) {
+          finalNum = factorial(userVector.at(0));
+          cout << "The factorial of " << userVector.at(0) << " is: " << finalNum << endl;
+      }
+      else if (inArray(detect, arr7, sizeof(arr7) / sizeof(arr7[0]) - 1)) {
+          finalNum = sqrt(userVector.at(0));
+          cout << "The square root of " << userVector.at(0) << " is: " << finalNum << endl;
+      }
+      else cout << "Your input was not evaluated!" << endl;
   }
   else if (userNumAmount == 2) {
       menuTwo();
@@ -116,6 +127,7 @@ int main() {
           finalNum = power(userVector.at(0), userVector.at(1));
           cout << userVector.at(0) << " to the power of " << userVector.at(1) << " is: " << finalNum << endl;
       }
+      else cout << "Your input was not evaluated!" << endl;
   }
   else {
       menuOther();
@@ -146,5 +158,6 @@ int main() {
           }
           cout << "The division of your numbers is: " << finalNum << endl;
       }
+      else cout << "Your input was not evaluated!" << endl;
   }
 }
