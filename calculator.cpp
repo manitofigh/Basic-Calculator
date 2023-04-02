@@ -6,8 +6,9 @@
 
 using namespace std;
 
-int userNumAmount;
+unsigned int userNumAmount;
 string detect;
+double temp;
 
 bool inArray(string checkWord, string arr[], int sizeOfArray) { // Function to understand if a word is inside an array
   bool exists = false;
@@ -36,7 +37,7 @@ int factorial(int num1){ // returns the factorial of any number
 
 void menuOne (){ // the showing menu if the user only wants to work with one number
    cout << "\nChoose your required operation: " << endl;
-   cout << "1) ! (factorial)\n2) √ (root)" << endl;
+   cout << "1) ! (factorial)\n2) √ (root)\n3) sin (in degrees)\n4) cos (in degrees)\n5) tan (in degrees)\n6) cot (in degrees)" << endl;
    cin >> detect;
    transform(detect.begin(), detect.end(), detect.begin(), ::tolower);
 }
@@ -64,6 +65,10 @@ int main() {
   string arr5[] = {"5", "power", "^", "5)", "five"};
   string arr6[] = {"1", "factorial", "!", "1)", "one"};
   string arr7[] = {"2", "root", "√", "2)", "two"};
+  string arr8[] = {"3", "sin", "3)", "three"};
+  string arr9[] = {"4", "cos", "4)", "four"};
+  string arr10[] = {"5", "tan", "5)", "five"};
+  string arr11[] = {"6", "cot", "6)", "six"};
 
   cout << endl;
   cout << "************************************" << endl;
@@ -95,6 +100,22 @@ int main() {
       else if (inArray(detect, arr7, sizeof(arr7) / sizeof(arr7[0]) - 1)) {
           finalNum = sqrt(userVector.at(0));
           cout << "\nThe square root of " << userVector.at(0) << " is: " << finalNum << endl << endl;
+      }
+      else if (inArray(detect, arr8, sizeof(arr8) / sizeof(arr8[0]) - 1)) {
+          finalNum = sin(userVector.at(0) * M_PI / 180);
+          cout << "\nSinus of " << userVector.at(0) << " is: " << finalNum << endl << endl;
+      }
+      else if (inArray(detect, arr9, sizeof(arr9) / sizeof(arr9[0]) - 1)) {
+          finalNum = cos(userVector.at(0) * M_PI / 180);
+          cout << "\nCosine of " << userVector.at(0) << " is: " << finalNum << endl << endl;
+      }
+      else if (inArray(detect, arr10, sizeof(arr10) / sizeof(arr10[0]) - 1)) {
+          finalNum = tan(userVector.at(0) * M_PI / 180);
+          cout << "\nTangent of " << userVector.at(0) << " is: " << finalNum << endl << endl;
+      }
+      else if (inArray(detect, arr11, sizeof(arr11) / sizeof(arr11[0]) - 1)) {
+          finalNum = 1/tan(userVector.at(0) * M_PI / 180);
+          cout << "\nCotangent of " << userVector.at(0) << " is: " << finalNum << endl << endl;
       }
       else cout << "\nYour input was not evaluated!" << endl << endl;
   }
