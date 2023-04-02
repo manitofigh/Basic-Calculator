@@ -102,7 +102,7 @@ int main() {
           cout << "\nThe square root of " << userVector.at(0) << " is: " << finalNum << endl << endl;
       }
       else if (inArray(detect, arr8, sizeof(arr8) / sizeof(arr8[0]) - 1)) {
-          finalNum = sin(userVector.at(0) * M_PI / 180);
+          finalNum = sin(userVector.at(0) * M_PI / 180); // the trig function takes angles in radiant so I multiply by PI and divide by 180 to turn to degrees
           cout << "\nSinus of " << userVector.at(0) << " is: " << finalNum << endl << endl;
       }
       else if (inArray(detect, arr9, sizeof(arr9) / sizeof(arr9[0]) - 1)) {
