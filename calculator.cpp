@@ -16,8 +16,7 @@ bool inArray(string checkWord, string arr[], int sizeOfArray) { // Function to u
     if (arr[i] == checkWord)
       exists = true;
   }
-  if (exists) return true;
-  else return false;
+  return exists;
 }
 
 double power(double num1, int num2) { // returns the first number to the power of the second number
