@@ -79,7 +79,7 @@ int main() {
   cin >> userNumAmount;
   if (userNumAmount <= 0) { // since you need at least one number to use the calc, it will ask to enter a num above 0, incase they entered a num < 1
       do {
-          cout << "\nOnly enter an integer above 0: ";
+          cout << endl << "Only enter an integer above 0: ";
           cin >> userNumAmount;
       }
       while (userNumAmount <= 0);
